@@ -28,7 +28,17 @@ class MempoolTransaction():
 
 
 def parse_mempool_csv():
-    with open('mempool.csv') as f:
+    pathOfMempoolFile = r"C:\Users\Jayash Satolia\OneDrive\Desktop\SummerOfBitcoin\mempool.csv"
+    csvData = pandas.read_csv(pathOfMempoolFile)
+
+    csvData.sort_values(["weight", "fee"],
+                    axis=0,
+                    ascending=[True, False], 
+                    inplace=True)
+    
+    csvData.to_csv('SolutionWithDecendingFeeAndAscendingWeight.csv', index=False)    
+
+    with open('SolutionWithDecendingFeeAndAscendingWeight.csv') as f:
         f.readline()
         weights = []
         fees = []
@@ -42,11 +52,12 @@ def parse_mempool_csv():
             elif p:
                 x.append(p)
     
-    print("3 >> ", sum(fees), " >> ", sum(weights))
+    print("1 >> ", sum(fees), " >> ", sum(weights))
+    print(csvData)
 
     
-    '''z = open("ansx.txt", "a")
+    z = open("SolutionWithDecendingFeeAndAscendingWeight.txt", "a")
     z.writelines(x)
-    z.close()'''
+    z.close()
 
 parse_mempool_csv()

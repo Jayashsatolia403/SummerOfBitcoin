@@ -1,5 +1,3 @@
-import pandas
-
 class MempoolTransaction():
     def __init__(self, txid, fee, weight, parents):
         self.txid = txid
@@ -28,16 +26,8 @@ class MempoolTransaction():
 
 
 def parse_mempool_csv():
-    csvData = pandas.read_csv("mempool.csv")
-
-    csvData.sort_values(["weight", "fee"],
-                    axis=0,
-                    ascending=[True, False], 
-                    inplace=True)
-    
-    csvData.to_csv('y.csv', index=False)    
-
-    with open('y.csv') as f:
+    pathOfMempoolFile = r"C:\Users\Jayash Satolia\OneDrive\Desktop\SummerOfBitcoin\mempool.csv"
+    with open(pathOfMempoolFile) as f:
         f.readline()
         weights = []
         fees = []
@@ -51,11 +41,7 @@ def parse_mempool_csv():
             elif p:
                 x.append(p)
     
-    print("1 >> ", sum(fees), " >> ", sum(weights))
-    print(csvData)
-
-    
-    z = open("ansy.txt", "a")
+    z = open("InitialSolWithNoChange.txt", "a")
     z.writelines(x)
     z.close()
 
