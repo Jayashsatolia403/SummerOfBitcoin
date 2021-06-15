@@ -1,0 +1,5 @@
+tx_id,fee,weight,parents 
+a,3,10,
+b,2,1,
+d,3,2,
+c,5,50,
