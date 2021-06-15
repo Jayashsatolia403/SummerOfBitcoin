@@ -5,7 +5,7 @@ Idea - The Whole logic behind this code is just take difference of fee and weigh
        and also transactionIDs.
 
 Other Ideas - I have attached Files of code which i tried before reaching to this solution
-              in OtherSolution Folder on github on link - .
+              in OtherSolution Folder on github on link - https://github.com/Jayashsatolia403/SummerOfBitcoin.git.
               But This is Perfect Solution in best of my idea.
        
 """
